@@ -6,10 +6,19 @@
     <description>Recent content on Abigail Lebrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 22 Aug 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UK Election Data: Where to find open data and interesting metrics</title>
+      <link>/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/</guid>
+      <description>Most electoral analysis is conducted by academics with University resources and collaborators. Not working in an academic institution and having spent some time researching what actually happened in the 2017 election, I have gathered some useful open data source and insights for election data that I thought would be helpful to share. In the following series of blog posts, I will describe where to find the data and why each bit of data is useful.</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -17,9 +26,9 @@
       <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>I have been working in Data Science since completing my PhD in Computer Science, received from Imperial College London in 2010.
+      <description>I have been working in Data Science since completing my PhD in Computer Science (Imperial College London, 2010).
 Details of my professional experience can be found on LinkedIn.
-I have experience applying Data Science and Analytics in e-commerce and digital marketing. My Data Science interests include the multi-touch marketing channel attribution problem, effective data communication and visualisation, survey design and interpretation, exploratory data analysis, textual analytics and working with R.</description>
+I have experience applying Data Science and Analytics in areas including e-commerce, digital marketing and political research. My Data Science interests include the multi-touch marketing channel attribution problem, effective data communication and visualisation, survey design and interpretation, exploratory data analysis, textual analytics and working with R.</description>
     </item>
     
     <item>
@@ -37,7 +46,7 @@ I have experience applying Data Science and Analytics in e-commerce and digital 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/contact/</guid>
-      <description>Contact me on Twitter, LinkedIn or email me at abigail dot lebrecht at gmail dot com</description>
+      <description>Contact me on Twitter, LinkedIn or email abigail dot lebrecht at gmail dot com</description>
     </item>
     
     <item>
@@ -46,8 +55,7 @@ I have experience applying Data Science and Analytics in e-commerce and digital 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/home/</guid>
-      <description>Data Science Consultant with experience in data analysis in multiple fields including e-commerce and digital marketing.
-Interested in the effective communication of data, understanding uncertainty, visualisation and coding in R. Available for consultancy in London, UK or remote work.</description>
+      <description>Data Science Consultant interested in the effective communication of data, understanding uncertainty, visualisation and coding in R. Available for consultancy in London, UK or remote work.</description>
     </item>
     
     <item>

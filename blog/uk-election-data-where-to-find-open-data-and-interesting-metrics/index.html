@@ -15,9 +15,9 @@
 <meta property="og:site_name" content="Abigail Lebrecht" />
 <meta property="og:locale" content="nn_NO" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/home/" />
-<meta property="og:title" content="Home" />
-<meta property="twitter:title" content="Home">
+<meta property="og:url" content="/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/" />
+<meta property="og:title" content="UK Election Data: Where to find open data and interesting metrics" />
+<meta property="twitter:title" content="UK Election Data: Where to find open data and interesting metrics">
 
     <meta property="og:image" content="/img/banner.png">
     <meta property="twitter:card" content="summary">
@@ -29,10 +29,10 @@
 <title>
 
 
-     Abigail Lebrecht - Home 
+     Abigail Lebrecht - UK Election Data: Where to find open data and interesting metrics 
 
 </title>
-<link rel="canonical" href="/home/">
+<link rel="canonical" href="/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/">
 
 
 <style media="screen">
@@ -1120,26 +1120,462 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
     </div>
 </div>
 
-<div class="main column">
+
+<div class="main post non-narrow zero-top-spacing column">
     <div class="container">
         <div class="content">
-            <div class="page-heading">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
 
-    Home
+    UK Election Data: Where to find open data and interesting metrics
 
 </div>
 
+                </div>
+                <div class="meta">
+                    <div class="date" title="Fri 23 Mar 2018 00:00:00 UTC">23 Mar  2018</div>
+                    
+                        
+                        <div class="author middot" title="Abigail Lebrecht">Abigail Lebrecht</div>
+                        
+                    
+                    <div class="reading-time middot">7 minute read</div>
+                    <div class="tags">
+                        <ul>
+                          
+                            <li class="middot"><a href="/tags/election">election</a> </li>
+                          
+                            <li class="middot"><a href="/tags/open-data">open data</a> </li>
+                          
+                            <li class="middot"><a href="/tags/r">R</a> </li>
+                          
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                          
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="markdown">
                 
     
-    <p>Data Science Consultant interested in the effective communication of data, understanding uncertainty, visualisation and coding in R.
-Available for consultancy in <a href="./contact">London, UK or remote work</a>.</p>
+    <p>Most electoral analysis is conducted by academics with University resources and collaborators. Not working in an academic institution and having spent some time researching what actually happened in the <a href="https://www.newstatesman.com/politics/june2017/2017/10/how-brexit-cost-conservatives-their-majority">2017 election</a>, I have gathered some useful open data source and insights for election data that I thought would be helpful to share. In the following series of blog posts, I will describe where to find the data and why each bit of data is useful. Using some helpful anecdotes, I will try and illustrate how insight can be taken from lots of different types of data source and some interesting lesser used metrics.</p>
+<p>Election studies are usually presented as finished works, often a model of all constituency results. But the small stories in each constituency can help explain the 650 individual battles that go on around the country, thematically similar, but locally different. Below I will show where to find the data for actual election results going back and what they can be useful for.</p>
+<p>For raw election results in recent years, I recommend data from Parliament. These include only total number of votes, and no proportions or swing. I prefer working with total vote numbers to begin with and these datasets provide easy access to votes for each party, total votes and electorate size. They also list, for each constituency, the name of the winning party and second placed party (which can save on some subsequent data wrangling). They do not, however include candidate names, which reduces the size of the dataset. These are available for <a href="http://researchbriefings.files.parliament.uk/documents/CBP-7979/HoC-GE2017-constituency-results.csv">2017</a> and <a href="http://researchbriefings.files.parliament.uk/documents/CBP-7186/hocl-ge2015-results-summary.csv">2015</a>. I include an example of this data below:</p>
+<table class="table" style="font-size: 7px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+ons_id
+</th>
+<th style="text-align:left;">
+ons_region_id
+</th>
+<th style="text-align:left;">
+constituency_name
+</th>
+<th style="text-align:left;">
+county_name
+</th>
+<th style="text-align:left;">
+region_name
+</th>
+<th style="text-align:left;">
+country_name
+</th>
+<th style="text-align:left;">
+constituency_type
+</th>
+<th style="text-align:left;">
+declaration_time
+</th>
+<th style="text-align:left;">
+result
+</th>
+<th style="text-align:left;">
+first_party
+</th>
+<th style="text-align:left;">
+second_party
+</th>
+<th style="text-align:right;">
+electorate
+</th>
+<th style="text-align:right;">
+valid_votes
+</th>
+<th style="text-align:right;">
+invalid_votes
+</th>
+<th style="text-align:right;">
+majority
+</th>
+<th style="text-align:right;">
+con
+</th>
+<th style="text-align:right;">
+lab
+</th>
+<th style="text-align:right;">
+ld
+</th>
+<th style="text-align:right;">
+ukip
+</th>
+<th style="text-align:right;">
+green
+</th>
+<th style="text-align:right;">
+snp
+</th>
+<th style="text-align:right;">
+pc
+</th>
+<th style="text-align:right;">
+dup
+</th>
+<th style="text-align:right;">
+sf
+</th>
+<th style="text-align:right;">
+sdlp
+</th>
+<th style="text-align:right;">
+uup
+</th>
+<th style="text-align:right;">
+alliance
+</th>
+<th style="text-align:right;">
+other
+</th>
+<th style="text-align:right;">
+other_winner
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+W07000049
+</td>
+<td style="text-align:left;">
+W92000004
+</td>
+<td style="text-align:left;">
+Aberavon
+</td>
+<td style="text-align:left;">
+West Glamorgan
+</td>
+<td style="text-align:left;">
+Wales
+</td>
+<td style="text-align:left;">
+Wales
+</td>
+<td style="text-align:left;">
+County
+</td>
+<td style="text-align:left;">
+2017-06-09 02:41:00
+</td>
+<td style="text-align:left;">
+Lab hold
+</td>
+<td style="text-align:left;">
+Lab
+</td>
+<td style="text-align:left;">
+Con
+</td>
+<td style="text-align:right;">
+49892
+</td>
+<td style="text-align:right;">
+33268
+</td>
+<td style="text-align:right;">
+57
+</td>
+<td style="text-align:right;">
+16761
+</td>
+<td style="text-align:right;">
+5901
+</td>
+<td style="text-align:right;">
+22662
+</td>
+<td style="text-align:right;">
+599
+</td>
+<td style="text-align:right;">
+1345
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2761
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+W07000058
+</td>
+<td style="text-align:left;">
+W92000004
+</td>
+<td style="text-align:left;">
+Aberconwy
+</td>
+<td style="text-align:left;">
+Clwyd
+</td>
+<td style="text-align:left;">
+Wales
+</td>
+<td style="text-align:left;">
+Wales
+</td>
+<td style="text-align:left;">
+County
+</td>
+<td style="text-align:left;">
+2017-06-09 02:31:00
+</td>
+<td style="text-align:left;">
+Con hold
+</td>
+<td style="text-align:left;">
+Con
+</td>
+<td style="text-align:left;">
+Lab
+</td>
+<td style="text-align:right;">
+45251
+</td>
+<td style="text-align:right;">
+32150
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+635
+</td>
+<td style="text-align:right;">
+14337
+</td>
+<td style="text-align:right;">
+13702
+</td>
+<td style="text-align:right;">
+941
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3170
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p>Going back before 2015 results is trickier. The British Election Study recommends getting data from Pippa Norris’ <a href="https://sites.google.com/site/pippanorris3/research/data#TOC-May-6th-2010-British-General-Election-Constituency-Results-Release-5.0">site</a> and 2010 results with 2005 results can be found <a href="http://www.hks.harvard.edu/fs/pnorris/datafiles/British%20General%20Election%20May%202010/British_Parliamentary_Constituency_General_Election_2010_Version_5.xlsx">here</a>. This data includes results as percentages as well as raw votes, candidate names and throws in the census results for each constituency too. This data is available for 2015 and 2017 too and is definitely helpful if you want to look at demographics using census data. The data file has many more fields than the smaller data provided by Parliament, so if the detail isn’t needed, it can be simpler to use the former.</p>
+<div id="turnout" class="section level1">
+<h1>Turnout</h1>
+<p>Turnout is usually measured as a proportion of the total votes cast (a counted figure) divided by the electorate size. In a recent paper, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3098436">Mellor et al.</a> report inaccuracies in the voter register which could mean that the electorate figures are inexact in many places. This is important for analysis - turnout change is just reported as the difference between these two proportions, but if the electorate figure is inaccurate, these numbers can be meaningless. My proposed solution is to ignore the electorate figure altogether. Thus voting (not turnout) changes in 2017 are defined as:</p>
+<p>(valid_votes_2017-valid_votes_2015)/valid_votes_2015</p>
+<p>This is useful as it scales voting increase on a proportional electorate size. We know from the endless debates about constituency boundary size, that, whatever the measure, constituencies currently differ hugely in electorate size. Thus 1000 new 2017 voters in Arfon would have had more impact then the same number on the Isle of Wight. While the numbers may not match the traditional approach, adhering to metrics that can be verified is important.</p>
+</div>
+<div id="wikipedia" class="section level1">
+<h1>Wikipedia</h1>
+<p><a href="https://en.wikipedia.org/wiki/List_of_United_Kingdom_Parliament_constituencies">Wikipedia</a> is also a brilliant resource for in-depth election results. As well as tables of full results (eg <a href="https://en.wikipedia.org/wiki/Results_of_the_United_Kingdom_general_election,_2010,_by_parliamentary_constituency">2010 here</a>), each constituency page lists all the candidates, party names and vote numbers going back decades. Many may question the need for so much detail, or history, but when looking at data on a constituency level, understanding the history of that constituency helps understand what is happening now. When we try and understand an election result, we can only define what happened in a constituency in terms of swings or vote changes from the previous election. But is that change due to the success of a party in the current election, or their failure in that constituency in the previous election? Without studying the results of previous elections in depth it is difficult to judge.</p>
+<p>An example constituency is <a href="https://en.wikipedia.org/wiki/Wyre_Forest_(UK_Parliament_constituency)">Wyre Forest</a> - a top level look at the Conservative and Labour vote swings show huge gains for both parties, suggesting that the narrative of voters being attracted to the two main parties in 2017. This could be attributed to Brexit (it voted 63% leave in the referendum and had a large UKIP vote in 2015, which tended to benefit the Conservatives), or a Labour surge. But a look back into the history of this constituency tells a different story - between 2001 and 2010, this constituency was represented by Dr Richard Taylor who was elected as an Independent to save the Accident and Emergency department of Kidderminster hospital. Dr Taylor narrowly lost his seat in 2010 and stood again in 2015 for the National Health Action Party where he polled a decent but ineffectual 7211 votes, putting him in fourth place behind UKIP. In 2017 Dr Taylor did not stand, creating 7000 floating voters in Wyre Forest, hence the huge swings to Conservative and Labour. Given that Conservatives and Labour both increased their vote by about the same amount and it is likely that the Conservatives were more likely to gain UKIP votes, Dr Taylor’s voters seem more likely to have switched to Labour. Thus the Labour vote in Wyre Forest has to be seen within the context of 1997 Labour voters returning after 15 years of loyalty to Dr Taylor, more than any specific effort by the 2017 Labour campaign.</p>
+<p>I remember being vaguely aware in 2001 that an Independent candidate had been elected on a local health issue, I may have even picked up in 2005 that he was re-elected. But it is only with Wikipedia’s historical records that I can see that Dr Taylor’s record from 2001 needs to be taken into account 16 years later to understand the local vote in 2017. All these little stories are hidden in this historical election data. Not just numbers, but parties matter too. <em>Other</em> isn’t enough as a party name - who is that <em>Other</em>? There is a difference between the BNP and a save local hospital campaign. The idiosyncrasies of our electoral system mean anyone can stand and impact on the overall result. It matters who the voters used to vote for before being attracted to the other party, even if it was 20 years before. And names matter to. It matters if the same candidate is standing or someone different.</p>
+<p>Whilst it is sometimes sufficient to use Wikipedia sporadically as an explainer to anomalous results or outliers, it is sometimes necessary to read data from Wikipedia. For this, I recommend the following technique in R (h/t this <a href="https://stackoverflow.com/questions/7407735/importing-wikipedia-tables-in-r">StackOverflow response</a>):</p>
+<pre class="r"><code>library(httr)
+library(XML)
+
+url &lt;- &quot;https://en.wikipedia.org/wiki/Wyre_Forest_(UK_Parliament_constituency)&quot;
+
+r &lt;- GET(url)
+
+doc &lt;- readHTMLTable(
+  doc=content(r, &quot;text&quot;))</code></pre>
+<p>The method uses the <em>httr</em> and <em>XML</em> packages to read all the tables from the webpage. They are then returned as a list, where each list element is named with the table caption from Wikipedia. Thus it is easy to print the results for 2017:</p>
+<pre class="r"><code>library(knitr)
+
+kable(doc$`General Election 2017: Wyre Forest[4]`)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">V1</th>
+<th align="left">V2</th>
+<th align="left">V3</th>
+<th align="left">V4</th>
+<th align="left">V5</th>
+<th align="left">V6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Conservative</td>
+<td align="left">Mark Garnier</td>
+<td align="left">29,859</td>
+<td align="left">58.4</td>
+<td align="left">+ 13.1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Labour</td>
+<td align="left">Matt Lamb</td>
+<td align="left">16,525</td>
+<td align="left">32.3</td>
+<td align="left">+ 13.1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Liberal Democrat</td>
+<td align="left">Shazu Miah</td>
+<td align="left">1,943</td>
+<td align="left">3.8</td>
+<td align="left">+ 1.3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">UKIP</td>
+<td align="left">George Connolly</td>
+<td align="left">1,777</td>
+<td align="left">3.5</td>
+<td align="left">- 12.6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Green</td>
+<td align="left">Brett Caulfield</td>
+<td align="left">1,025</td>
+<td align="left">2.0</td>
+<td align="left">- 0.3</td>
+</tr>
+<tr class="even">
+<td align="left">Majority</td>
+<td align="left">13,334</td>
+<td align="left">26.1</td>
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Turnout</td>
+<td align="left">51,223</td>
+<td align="left">65.8</td>
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Conservative hold</td>
+<td align="left">Swing</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>There is lots of interesting insight to be found by studying historical voting patterns, turnout, parties and personalities in each constituency. In subsequent blogposts I am going to discuss other useful election data sources: the results from the Brexit referendum and survey data. If there is any data you think I should add to this post, please get in touch.</p>
+</div>
 
 
+                <br>
             </div>
+            
+            <div class="share">
+                <a href="" class="ssk ssk-facebook"></a>
+                <a href="" class="ssk ssk-twitter"></a>
+                <a href="" class="ssk ssk-google-plus"></a>
+                <a href="" class="ssk ssk-linkedin"></a>
+            </div>
+            
+            
+                <div class="navigation">
+                    
+                    <div style="width: 100%;"></div>
+                    
+                </div>
+            
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </div>
+
 <div class="footer column">
     <div class="container">
 
