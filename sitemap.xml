@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/why-what-is-a-data-scientist-is-the-wrong-question-to-ask/</loc>
+    <lastmod>2018-03-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/</loc>
     <lastmod>2018-03-23T00:00:00+00:00</lastmod>
   </url>
@@ -18,13 +23,13 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-03-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2018-03-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,6 +40,12 @@
   
   <url>
     <loc>/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2018-03-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -65,7 +76,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-03-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
