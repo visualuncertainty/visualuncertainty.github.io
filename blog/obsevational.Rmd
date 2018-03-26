@@ -3,6 +3,7 @@ author: "Abigail Lebrecht"
 date: 2018-03-26
 title: "Why 'What is a Data Scientist?' is the wrong question to ask"
 tags: ["Data Science"]
+meta_img: "/img/twitterpic2.jpg"
 ---
 
 In a recent interview on [Dataframed](https://www.datacamp.com/community/podcast/text-mining-nlproc) podcast, [Julia Silge](https://juliasilge.com/), spoke of her background in Observational Astronomy and how applicable it was in Data Science. Later she gave a good explanation of her work in textual analytics and how it differs from Natural Language Processing, again as a method for observation rather than prediction. I found her use of wording interesting and thought it should have some credence in every data scientists' favourite debate "What is a Data Scientist?"
