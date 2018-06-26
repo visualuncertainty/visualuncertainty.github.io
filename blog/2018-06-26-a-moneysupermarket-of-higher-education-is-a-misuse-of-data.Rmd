@@ -1,11 +1,10 @@
 ---
 author: "Abigail Lebrecht"
 date: 2018-06-26
-title: 'A Moneysupermarket of Higher Education?'
+title: "A Moneysupermarket of Higher Education? Why we shouldn't be totally Data-Driven"
 tags: ["Data Science"]
 meta_img: "/img/twitterpic2.jpg"
 ---
-
 Today the UK Higher Education Minister, Sam Gyimah tweeted:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We want students to be better informed about degree choices &amp; the returns - today, we&#39;re officially launching a competition for tech companies to take graduate data &amp; create a MoneySuperMarket for students, giving them real power to make the right choice. <a href="https://t.co/pAJV7Iz7Oe">https://t.co/pAJV7Iz7Oe</a></p>&mdash; Sam Gyimah MP (@SamGyimah) <a href="https://twitter.com/SamGyimah/status/1011530092965715968?ref_src=twsrc%5Etfw">June 26, 2018</a></blockquote>
@@ -15,21 +14,21 @@ Many people disagree with this for educational reasons and I'm sure I probably d
 
 #Why you can't compare degrees like Energy providers
 
-How do comparison sites work? Most deal with products or services that are difficult to compare physically. Energy is effectively the same product, whoever your provider; mobile phone deals often differ subtley, aeroplane flights ideally all do the same thing, get you from A to B in varying degrees of comfort. Comparison sites do not help you choose which is better (albeit some provide recommendations), but just act as an aggregator so you can judge based on price and some other simple comparable metrics.
+How do comparison sites work? Most deal with products or services that are difficult to compare physically. Energy is effectively the same product, whoever your provider; mobile phone deals often differ subtley, aeroplane flights ideally all do the same thing, get you from A to B in varying degrees of comfort. Comparison sites do not help you choose which is better (albeit some provide recommendations), but just act as an aggregator so you can judge based on price or other simple comparable metrics.
 
 This is fine for utilities or flights. The consumer hopefully gets the best deal and sometimes takes a risk on the product or service which is cheapest. The consumer will find out pretty quickly if they have made the wrong choice. After a horrible flight experience, they can choose never to use that airline again; an energy company provides poor customer service - it's simple, just switch providers again as soon as possible. Only insurance and financial products are more complicated to measure success (only upon claiming the insurance will a customer realise they should have chosen a more expensive plan, but in all likelihood this may never happen).
 
-But at what point does a student decide that their degree isn't delivering on the promise of success that the university comparison table - after graduation, 5 years into their career, when they haven't achieved enough at retirement? The comparison sites rely on short term products that can be tried and rejected. In fact comparing a university information site to consumer comparison sites is a weak analogy. This process is more like a dating site where you have to marry the first person you date. 
+But at what point does a student decide that their degree isn't delivering on the promise of success that the university comparison table promised - after graduation, 5 years into their career, when they haven't achieved enough at retirement? What can they do about it? They can't switch or take it back to the shop. The comparison sites rely on short term products that can be tried and rejected. In fact comparing a university information site to consumer comparison sites is a weak analogy. This process is more like a dating site where you have to marry the first person you date. 
 
 Students making informed decisions is important. Basing those decisions on data as well as other factors is positive and admirable. But what is there about hundreds of degree programs teaching totally different things (often within the same subjects) which can be compared?
 
 #The Data problems with a comparison site of universities
 
-The idea of taking a few easily available metrics about graduate achievements and using them to help students choose their path is destined to be bad and dangerous use of data. Why do graduates of a university earn more or less? There are lots of reasons, some related to the course, but many for lots of bad reasons. A graduate could earn more because:
+The idea of taking a few easily available metrics about graduate achievements and using them to help students choose their path is destined to be bad and dangerous use of data. Why do graduates of a university earn more or less? A graduate could earn more because:
 - Their university has a better reputation with big employers making it easier to be hired there. This does not represent the achievements of the university, but the snobbery of the employer and any table that presented this data would increase this bias.
 - A university could take more students from a demographic background that is likely to earn more where-ever they go to university. Indeed ranking universities by earning power could discourage universities from recruiting socially diverse students.
-- Which earnings are related to their degree? UCL are proud to name Coldplay as some of their illustrious graduates. While their work is not related to their degrees, there would be no Coldplay if the band had not met at UCL. Would their earnings count towards the mean or median earnings.
+- Which earnings are related to their degree? UCL are proud to name Coldplay as some of their illustrious graduates. While their work is not related to their degrees, there would be no Coldplay if the band had not met at UCL. Would their earnings count towards the mean or median earnings?
 
 This idea of ranking by graduate achievements is so full of confirmation bias and causation issues to be meaningless at best and dangerous at worst. We are surrounded today by data available to all and the ability to share with ease. We can summarise data and visualise data, but that does not mean that there is worth in all data. We forget that before presenting our data we need to think about our question and how we would answer it - we must think about what data would we like to answer our question, not fit our question to the data we've been given. 
 
-Data driven decision making is a fallacy and a folly. Data should only ever be used to advice a decision making process not make the decision for us. I hope the bidders will create a site which illustrates that there are few experiences in life that can be reduced to a comparison table.
+Data driven decision making can sometimes be a fallacy and a folly. Data should only ever be used to advise a decision making process not make the decision for us. Comparison is an important part of decision making, but to empower students, they need nuance not numbers.
