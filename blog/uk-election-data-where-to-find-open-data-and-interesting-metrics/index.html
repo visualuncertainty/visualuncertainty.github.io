@@ -1163,7 +1163,10 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
             <div class="markdown">
                 
     
-    <p>Most electoral analysis is conducted by academics with University resources and collaborators. Not working in an academic institution and having spent some time researching what actually happened in the <a href="https://www.newstatesman.com/politics/june2017/2017/10/how-brexit-cost-conservatives-their-majority">2017 election</a>, I have gathered some useful open data source and insights for election data that I thought would be helpful to share. In the following series of blog posts, I will describe where to find the data and why each bit of data is useful. Using some helpful anecdotes, I will try and illustrate how insight can be taken from lots of different types of data source and some interesting lesser used metrics.</p>
+    <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>Most electoral analysis is conducted by academics with University resources and collaborators. Not working in an academic institution and having spent some time researching what actually happened in the <a href="https://www.newstatesman.com/politics/june2017/2017/10/how-brexit-cost-conservatives-their-majority">2017 election</a>, I have gathered some useful open data source and insights for election data that I thought would be helpful to share. In the following series of blog posts, I will describe where to find the data and why each bit of data is useful. Using some helpful anecdotes, I will try and illustrate how insight can be taken from lots of different types of data source and some interesting lesser used metrics.</p>
 <p>Election studies are usually presented as finished works, often a model of all constituency results. But the small stories in each constituency can help explain the 650 individual battles that go on around the country, thematically similar, but locally different. Below I will show where to find the data for actual election results going back and what they can be useful for.</p>
 <p>For raw election results in recent years, I recommend data from Parliament. These include only total number of votes, and no proportions or swing. I prefer working with total vote numbers to begin with and these datasets provide easy access to votes for each party, total votes and electorate size. They also list, for each constituency, the name of the winning party and second placed party (which can save on some subsequent data wrangling). They do not, however include candidate names, which reduces the size of the dataset. These are available for <a href="http://researchbriefings.files.parliament.uk/documents/CBP-7979/HoC-GE2017-constituency-results.csv">2017</a> and <a href="http://researchbriefings.files.parliament.uk/documents/CBP-7186/hocl-ge2015-results-summary.csv">2015</a>. I include an example of this data below:</p>
 <table class="table" style="font-size: 7px; margin-left: auto; margin-right: auto;">
@@ -1467,79 +1470,177 @@ doc &lt;- readHTMLTable(
 kable(doc$`General Election 2017: Wyre Forest[4]`)</code></pre>
 <table>
 <thead>
-<tr class="header">
-<th align="left">V1</th>
-<th align="left">V2</th>
-<th align="left">V3</th>
-<th align="left">V4</th>
-<th align="left">V5</th>
-<th align="left">V6</th>
+<tr>
+<th style="text-align:left;">
+V1
+</th>
+<th style="text-align:left;">
+V2
+</th>
+<th style="text-align:left;">
+V3
+</th>
+<th style="text-align:left;">
+V4
+</th>
+<th style="text-align:left;">
+V5
+</th>
+<th style="text-align:left;">
+V6
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">Conservative</td>
-<td align="left">Mark Garnier</td>
-<td align="left">29,859</td>
-<td align="left">58.4</td>
-<td align="left">+ 13.1</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Conservative
+</td>
+<td style="text-align:left;">
+Mark Garnier
+</td>
+<td style="text-align:left;">
+29,859
+</td>
+<td style="text-align:left;">
+58.4
+</td>
+<td style="text-align:left;">
+13.1
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">Labour</td>
-<td align="left">Matt Lamb</td>
-<td align="left">16,525</td>
-<td align="left">32.3</td>
-<td align="left">+ 13.1</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Labour
+</td>
+<td style="text-align:left;">
+Matt Lamb
+</td>
+<td style="text-align:left;">
+16,525
+</td>
+<td style="text-align:left;">
+32.3
+</td>
+<td style="text-align:left;">
+13.1
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">Liberal Democrat</td>
-<td align="left">Shazu Miah</td>
-<td align="left">1,943</td>
-<td align="left">3.8</td>
-<td align="left">+ 1.3</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Liberal Democrat
+</td>
+<td style="text-align:left;">
+Shazu Miah
+</td>
+<td style="text-align:left;">
+1,943
+</td>
+<td style="text-align:left;">
+3.8
+</td>
+<td style="text-align:left;">
+1.3
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">UKIP</td>
-<td align="left">George Connolly</td>
-<td align="left">1,777</td>
-<td align="left">3.5</td>
-<td align="left">- 12.6</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+UKIP
+</td>
+<td style="text-align:left;">
+George Connolly
+</td>
+<td style="text-align:left;">
+1,777
+</td>
+<td style="text-align:left;">
+3.5
+</td>
+<td style="text-align:left;">
+12.6
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">Green</td>
-<td align="left">Brett Caulfield</td>
-<td align="left">1,025</td>
-<td align="left">2.0</td>
-<td align="left">- 0.3</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Green
+</td>
+<td style="text-align:left;">
+Brett Caulfield
+</td>
+<td style="text-align:left;">
+1,025
+</td>
+<td style="text-align:left;">
+2.0
+</td>
+<td style="text-align:left;">
+0.3
+</td>
 </tr>
-<tr class="even">
-<td align="left">Majority</td>
-<td align="left">13,334</td>
-<td align="left">26.1</td>
-<td align="left"></td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+Majority
+</td>
+<td style="text-align:left;">
+13,334
+</td>
+<td style="text-align:left;">
+26.1
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Turnout</td>
-<td align="left">51,223</td>
-<td align="left">65.8</td>
-<td align="left"></td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+Turnout
+</td>
+<td style="text-align:left;">
+51,223
+</td>
+<td style="text-align:left;">
+65.8
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">Conservative hold</td>
-<td align="left">Swing</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Conservative hold
+</td>
+<td style="text-align:left;">
+Swing
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 </tbody>
 </table>
