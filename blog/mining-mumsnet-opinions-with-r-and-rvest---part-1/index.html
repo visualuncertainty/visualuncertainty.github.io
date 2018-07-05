@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Abigail Lebrecht" />
 <meta property="og:locale" content="nn_NO" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/tags/r/" />
-<meta property="og:title" content="R" />
-<meta property="twitter:title" content="R">
+<meta property="og:url" content="/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/" />
+<meta property="og:title" content="Mining Mumsnet Opinions with R and RVest - Part 1" />
+<meta property="twitter:title" content="Mining Mumsnet Opinions with R and RVest - Part 1">
 
-    <meta property="og:image" content="/img/banner.png">
+    <meta property="og:image" content="//img/twitterpic2.jpg">
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:image" content="/img/banner.png">
+    <meta property="twitter:image" content="//img/twitterpic2.jpg">
 
 <meta property="og:description" content="">
 <meta property="twitter:description" content="">
@@ -29,10 +29,10 @@
 <title>
 
 
-     Abigail Lebrecht - R 
+     Abigail Lebrecht - Mining Mumsnet Opinions with R and RVest - Part 1 
 
 </title>
-<link rel="canonical" href="/tags/r/">
+<link rel="canonical" href="/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/">
 
 
 <style media="screen">
@@ -1071,8 +1071,6 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
 
 
 
-  <link href="/tags/r/index.xml" rel="alternate" type="application/rss+xml" title="Abigail Lebrecht" />
-
 
 </head>
 
@@ -1080,7 +1078,7 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
 <body>
 
 
-<div class="header header-home column">
+<div class="header column">
 
     <div class="container">
         
@@ -1122,36 +1120,113 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
     </div>
 </div>
 
-<div class="main column">
+
+<div class="main post non-narrow zero-top-spacing column">
     <div class="container">
         <div class="content">
-            <div class="posts">
-                <div class="page-heading">Posts about R</div>
-                <ul>
-                    
-                        <li class="post-item">
-    <span class="meta">23 Mar  2018</span>
-    <a href="/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/"><span>UK Election Data: Where to find open data and interesting metrics</span></a>
-</li>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
 
-                    
-                        <li class="post-item">
-    <span class="meta">7 May  2018</span>
-    <a href="/blog/the-local-elections-in-barnet-what-really-happened/"><span>The local elections in Barnet: What really happened?</span></a>
-</li>
+    Mining Mumsnet Opinions with R and RVest - Part 1
 
-                    
-                        <li class="post-item">
-    <span class="meta">5 Jul  2018</span>
-    <a href="/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/"><span>Mining Mumsnet Opinions with R and RVest - Part 1</span></a>
-</li>
+</div>
 
+                </div>
+                <div class="meta">
+                    <div class="date" title="Thu 5 Jul 2018 00:00:00 UTC">5 Jul  2018</div>
                     
-                </ul>
+                        
+                        <div class="author middot" title="Abigail Lebrecht">Abigail Lebrecht</div>
+                        
+                    
+                    <div class="reading-time middot">4 minute read</div>
+                    <div class="tags">
+                        <ul>
+                          
+                            <li class="middot"><a href="/tags/open-data">open data</a> </li>
+                          
+                            <li class="middot"><a href="/tags/r">R</a> </li>
+                          
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                          
+                          
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <div class="markdown">
+                
+    
+    <p><a href="http://mumsnet.com">Mumsnet</a> is an incredible source of information and opinions. Providing anonymised and moderated message boards, it is an interesting segment of a large demographic of public opinion. Obviously it struggles from the inherent biases of all social media platforms, but it attracts a different crowd and a less polarising tone than unanonymised platforms such as Facebook and Twitter, helped by careful moderation from MNHQ. Data Scientists commonly mine Facebook and Twitter to measure public opinion, and APIs are available for doing this, but I think Mumsnet conversations can add to the depth of online opinion mining.</p>
+<p>There is no Mumsnet API, but conversations can be scraped using the R <a href="https://cran.r-project.org/web/packages/rvest/rvest.pdf">Rvest</a> package from the <a href="https://www.tidyverse.org/">tidyverse</a>. I want to investigate Mumsnet’s opinions on one of the most controversial and polarising topics in the UK currently - Brexit. Fortunately Mumsnet has a special <a href="https://www.mumsnet.com/Talk/eu_referendum_2016_">Brexit talk board</a>, however not all users are aware of this and Brexit related topics are often brought up on other messageboards, primarily <a href="https://www.mumsnet.com/Talk/am_i_being_unreasonable">Am I being unreasonable</a> and <a href="https://www.mumsnet.com/Talk/politics">politics</a>. In this blogpost I am going to summarise some of the issues that arise when scraping these posts using the Rvest package.</p>
+<div id="scraping-all-the-relevant-pages" class="section level1">
+<h1>Scraping all the relevant pages</h1>
+<p>We want to collect all posts from every (or as many as possible) conversations about Brexit. We know that all conversations in the <strong>eu_referendums</strong> channel are about Brexit and some in the other channels.</p>
+<pre class="r"><code>eurefs = &#39;https://www.mumsnet.com/Talk/eu_referendum_2016_&#39;
+aiburefs = &#39;https://www.mumsnet.com/Talk/am_i_being_unreasonable&#39;
+polrefs = &#39;https://www.mumsnet.com/Talk/politics&#39;</code></pre>
+<p>First we need to scroll through all the listings in these directories. Before we can do this we need to find out how many pages of listings each directory has. We read in our first listings page and look for the node with the page number listed :</p>
+<pre class="r"><code>eur = read_html(eurefs, encoding = &quot;UTF-8&quot;) 
+
+pages = html_nodes(eur,&#39;.first&#39;)%&gt;%
+  html_text() %&gt;% unique() %&gt;%str_extract_all( &quot;\\-*\\d+\\.*\\d*&quot;) %&gt;% unlist()</code></pre>
+<p>The node titled <strong>first</strong> contains this and running <strong>html_nodes(eur,‘.first’)%&gt;% html_text() %&gt;% unique()</strong> gives pg 1 of 28. The <strong>unique</strong> function is important as often this is repeated at both the top and bottom of the page and we only need it once. We then need to pull out just the digits which we can do using regular expressions. We are then left with a vector of two numbers (masquerading as characters), the first page number and the last page number. Setting these as numerics <strong>i</strong> and <strong>n</strong> we can then generate a character vector of the URIs for all pages in that chatroom.</p>
+<pre class="r"><code>i=as.numeric(pages[1])
+n= as.numeric(pages[2])
+
+uris = paste(eurefs,&quot;?order=&amp;pg=&quot;,as.character(seq(i:n)),sep=&#39;&#39;)</code></pre>
+<p>We now need to traverse through these uris, and collect the page titles from each one. Thus for each page we need to do the following:</p>
+<pre class="r"><code> read_html(uri, encoding = &quot;UTF-8&quot;) %&gt;% html_nodes(&#39;.title&#39;)%&gt;%
+  html_nodes(xpath = &quot;./a&quot;) %&gt;% 
+  html_attr(&quot;href&quot;)</code></pre>
+<p>This reads all the nodes labelled <em>title</em> and pulls out the <em>href</em> in the link. Thus giving us a vector of uris of all conversations in the channel. This is fine for the <em>Brexit</em> channel, but in <em>AIBU</em> and <em>Politics</em>, Brexit is not the only topic. So we only want to gather the topics which relate to Brexit. For this I took a rather crude approach of looking for pages with <em>Brexit</em> or <em>EU</em> in the title:</p>
+<pre class="r"><code>  read_html(uri, encoding = &quot;UTF-8&quot;) %&gt;% html_nodes(&#39;.title&#39;)%&gt;%
+    html_nodes(xpath = &quot;//tr[.//a[contains(@href, &#39;Brexit&#39;) 
+               or contains(@href, &#39;brexit&#39;) or contains(@href, &#39;BREXIT&#39;) 
+               or contains(@href, &#39;-EU-&#39;)]]//a&quot;) %&gt;% 
+    html_attr(&quot;href&quot;)</code></pre>
+<p>We can do this using <strong>xpath</strong> to filter the XML nodes before extracting the <strong>href</strong> links. I look for documents with a title containing <strong>Brexit</strong> (with various capitalisation options), or <strong>EU</strong>. This is a slightly crude approach and will include some irrelevant conversations (eg Mumsnet favourite “will Brexit impact house prices?”), and miss many more conversations that may reference the Brexit situation without referring to it.</p>
+<p>Identifying a Brexit themed post could probably be done more accurately using machine learning. We could use the conversation titles from the Brexit talk board to build a model that predicts if a conversation title is likely to be about Brexit (eg Naive Bayes). However, given the small number of conversations in the other channels that this would apply to, it doesn’t seem worth the effort.</p>
+<p>Another issue with scraping this data is dates. While the Brexit chat board stretches back to only when Brexit became a talking point (March 2016), the Politics and AIBU boards go back much further in time. With my approach we pull every relevant conversation even if it is a from a few years earlier. I then filter by date after reading the contents of conversations. An alternative would be to read the last post date for each conversation and stop reading the uri when a conversation’s last posting date is before March 2016. Both these methods are quite slow, although I haven’t compared speeds yet.</p>
+<p>In the next blogpost we will look at using Rvest to scrape the conversations. I will highlight some of the stylistic issues unique to Mumsnet that need to be considered when reading their data for analysis.</p>
+</div>
+
+
+                <br>
+            </div>
+            
+            <div class="share">
+                <a href="" class="ssk ssk-facebook"></a>
+                <a href="" class="ssk ssk-twitter"></a>
+                <a href="" class="ssk ssk-google-plus"></a>
+                <a href="" class="ssk ssk-linkedin"></a>
+            </div>
+            
+            
+                <div class="navigation">
+                    
+                    <div>
+                        <img class="icon" src="/img/back.svg" alt="back" />
+                        <a href="/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/">A Moneysupermarket of Higher Education? Why we shouldn&#39;t be totally Data-Driven</a>
+                    </div>
+                    
+                    <div style="width: 100%;"></div>
+                    
+                </div>
+            
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </div>
+
 <div class="footer column">
     <div class="container">
 

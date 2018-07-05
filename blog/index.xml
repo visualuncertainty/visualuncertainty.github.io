@@ -6,10 +6,19 @@
     <description>Recent content in Blog on Abigail Lebrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mining Mumsnet Opinions with R and RVest - Part 1</title>
+      <link>/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/</guid>
+      <description>Mumsnet is an incredible source of information and opinions. Providing anonymised and moderated message boards, it is an interesting segment of a large demographic of public opinion. Obviously it struggles from the inherent biases of all social media platforms, but it attracts a different crowd and a less polarising tone than unanonymised platforms such as Facebook and Twitter, helped by careful moderation from MNHQ. Data Scientists commonly mine Facebook and Twitter to measure public opinion, and APIs are available for doing this, but I think Mumsnet conversations can add to the depth of online opinion mining.</description>
+    </item>
     
     <item>
       <title>A Moneysupermarket of Higher Education? Why we shouldn&#39;t be totally Data-Driven</title>
