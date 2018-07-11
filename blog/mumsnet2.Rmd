@@ -53,7 +53,6 @@ We can then use the map function from the purrr package to create a list of the 
 
 However, in some case this might not be sufficient. Emojis are often used as part of speech.
 
-<div style="width:800px; height:20px">
 ![Mumsnet emoji](emojis.png)
 
 It will enhance our textual analytics to keep them in their position in the text. 
