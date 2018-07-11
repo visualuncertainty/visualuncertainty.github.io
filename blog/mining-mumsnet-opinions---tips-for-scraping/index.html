@@ -2,7 +2,6 @@
 <html lang="en-US">
 
 <head>
-	<meta name="generator" content="Hugo 0.37.1" />
 <meta charset="utf-8">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -16,24 +15,24 @@
 <meta property="og:site_name" content="Abigail Lebrecht" />
 <meta property="og:locale" content="nn_NO" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/" />
-<meta property="og:title" content="Abigail Lebrecht" />
-<meta property="twitter:title" content="Abigail Lebrecht">
+<meta property="og:url" content="/blog/mining-mumsnet-opinions---tips-for-scraping/" />
+<meta property="og:title" content="Mining Mumsnet Opinions - Tips for Scraping" />
+<meta property="twitter:title" content="Mining Mumsnet Opinions - Tips for Scraping">
 
-    <meta property="og:image" content="/img/banner.png">
+    <meta property="og:image" content="//img/twitterpic2.jpg">
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:image" content="/img/banner.png">
+    <meta property="twitter:image" content="//img/twitterpic2.jpg">
 
-<meta property="og:description" content="Example blog">
-<meta property="twitter:description" content="Example blog">
+<meta property="og:description" content="">
+<meta property="twitter:description" content="">
 
 <title>
 
 
-    Abigail Lebrecht
+     Abigail Lebrecht - Mining Mumsnet Opinions - Tips for Scraping 
 
 </title>
-<link rel="canonical" href="/">
+<link rel="canonical" href="/blog/mining-mumsnet-opinions---tips-for-scraping/">
 
 
 <style media="screen">
@@ -1072,8 +1071,6 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
 
 
 
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Abigail Lebrecht" />
-
 
 </head>
 
@@ -1081,7 +1078,7 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
 <body>
 
 
-<div class="header header-home column">
+<div class="header column">
 
     <div class="container">
         
@@ -1123,82 +1120,149 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
     </div>
 </div>
 
-<div class="main column">
+
+<div class="main post non-narrow zero-top-spacing column">
     <div class="container">
         <div class="content">
-            
-                <div class="markdown">
-                <p>Data Science Consultant interested in the effective communication of data, understanding uncertainty, visualisation and coding in R.
-Available for consultancy in <a href="./contact">London, UK or remote work</a>.</p>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Mining Mumsnet Opinions - Tips for Scraping
+
+</div>
 
                 </div>
-            
-
-            
-                <div class="posts">
-                
-                
-                    <div class="page-heading">Latest posts</div>
-                    <ul>
+                <div class="meta">
+                    <div class="date" title="Tue 10 Jul 2018 00:00:00 UTC">10 Jul  2018</div>
                     
-                        <li class="groupby">Jul, 2018</li>
                         
-                            <li class="post-item">
-    <span class="meta">10 Jul  2018</span>
-    <a href="/blog/mining-mumsnet-opinions---tips-for-scraping/"><span>Mining Mumsnet Opinions - Tips for Scraping</span></a>
-</li>
-
-                        
-                            <li class="post-item">
-    <span class="meta">5 Jul  2018</span>
-    <a href="/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/"><span>Mining Mumsnet Opinions with R and RVest - Part 1</span></a>
-</li>
-
+                        <div class="author middot" title="Abigail Lebrecht">Abigail Lebrecht</div>
                         
                     
-                        <li class="groupby">Jun, 2018</li>
-                        
-                            <li class="post-item">
-    <span class="meta">26 Jun  2018</span>
-    <a href="/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/"><span>A Moneysupermarket of Higher Education? Why we shouldn&#39;t be totally Data-Driven</span></a>
-</li>
-
-                        
-                    
-                        <li class="groupby">May, 2018</li>
-                        
-                            <li class="post-item">
-    <span class="meta">7 May  2018</span>
-    <a href="/blog/the-local-elections-in-barnet-what-really-happened/"><span>The local elections in Barnet: What really happened?</span></a>
-</li>
-
-                        
-                    
-                        <li class="groupby">Mar, 2018</li>
-                        
-                            <li class="post-item">
-    <span class="meta">26 Mar  2018</span>
-    <a href="/blog/why-what-is-a-data-scientist-is-the-wrong-question-to-ask/"><span>Why &#39;What is a Data Scientist?&#39; is the wrong question to ask</span></a>
-</li>
-
-                        
-                    
-                    </ul>
-
-                    
-                        <a href="./blog/" class="see-more">See more ...</a>
-                    
-                
+                    <div class="reading-time middot">5 minute read</div>
+                    <div class="tags">
+                        <ul>
+                          
+                            <li class="middot"><a href="/tags/open-data">open data</a> </li>
+                          
+                            <li class="middot"><a href="/tags/r">R</a> </li>
+                          
+                            <li class="middot"><a href="/tags/opinion-mining">opinion mining</a> </li>
+                          
+                            <li class="middot"><a href="/tags/tidyverse">tidyverse</a> </li>
+                          
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                          
+                          
+                        </ul>
+                    </div>
                 </div>
-            
-
-            <div class="best-posts">
-            
-            
             </div>
+            <div class="markdown">
+                
+    
+    <p>The R blogosphere is an incredible place right now. From <a href="https://www.r-bloggers.com/">R-Bloggers</a> to <a href="https://rweekly.org/">R Weekly</a>, there are dozens of posts produced daily on new methods and real world applications of R. When writing any blog my first question is what can this post add that hasn’t already been said somewhere on the internet already? Blogs are often focused on new and exciting methodologies, visualisations or applications, answering interesting questions, yet very few focus on what we Data Scientists spend most of our time doing - data wrangling and cleaning. I would like to draw attention in this blog to some of the issues with real, messy websites, that the Rvest tutorials may not mention, and how I chose to approach these difficulties when mining conversations from Mumsnet.</p>
+<div id="scraping-a-mumsnet-conversation" class="section level1">
+<h1>Scraping a Mumsnet Conversation</h1>
+<p>A Mumsnet conversation consists of a number of posts split over many pages. The conversation is started by one user and their initial post is at the top of every page. Each post has a username, date-time stamp and the content of the post. Thus on first appearance, scraping posts is relatively straightforward using Rvest:</p>
+<pre class="r"><code>    conv = read_html(uri, encoding = &quot;UTF-8&quot;)
+    users1=html_nodes(conv,&#39;.nickname&#39;)%&gt;%
+      html_text() 
+    time1=html_nodes(conv,&#39;.post_time&#39;)%&gt;%
+      html_text() 
+    posts1 = html_nodes(conv,&#39;.talk-post.message&#39;)%&gt;%
+      html_text() 
+    
+    df = data.frame(date = time1,user = users1,text=posts1,stringsAsFactors=FALSE)</code></pre>
+<p>For each page of the conversation, we can read every nickname, post time and message and then combine them in a data frame. However, while this works fine for the nickname and post time, <strong>html_text()</strong> ignores all html coding in the text, which means that while we think we are scraping everything, we miss out on important information.</p>
+<div id="emojis" class="section level2">
+<h2>emojis</h2>
+<p>Emojis are an important means of communication on internet chatboards. The html_text() function does not scrape them, so another method needs to be used. There are different approaches that can be taken. For some, it may be considered useful to just know an emoji exists in a post at all, and therefore emojis can be scraped into a separate vector. To do this we look for <strong>img</strong> tags with an <strong>alt</strong> attribute - only emojis have these.</p>
+<pre class="r"><code>    emo&lt;-function(bl){
+      html_nodes(bl,&#39;img&#39;)  %&gt;% 
+        html_attr(&#39;alt&#39;,default=&#39;&#39;)}
+    
+    emojis = html_nodes(conv,&#39;.talk-post.message&#39;) %&gt;% 
+                                        map(emo) %&gt;% 
+                                        map(paste,collapse=&#39; &#39;) %&gt;% 
+                                        unlist()</code></pre>
+<p>We can then use the map function from the purrr package to create a list of the emojis in every single post. This can then be converted back to a vector and added to a data frame with the nickname, time and text.</p>
+<p>However, in some case this might not be sufficient. Emojis are often used as part of speech.</p>
+<div style="width:800px; height:20px">
+<div class="figure">
+<img src="emojis.png" alt="Mumsnet emoji" />
+<p class="caption">Mumsnet emoji</p>
+</div>
+<p>It will enhance our textual analytics to keep them in their position in the text.</p>
+</div>
+<div id="links" class="section level2">
+<h2>Links</h2>
+<p>Mumsnet users often share links to websites with eachother. These are useful to record, particularly when studying political discussion, to understand what outside links are of interest and being shared. In this case, there is no need for it to be included inside the text, so we can use a similar method for getting the emojis, this time looking for links and pulling out the <strong>href</strong> attribute:</p>
+<pre class="r"><code>    hr&lt;-function(bl){
+      html_nodes(bl,&#39;a[target=\&quot;_blank\&quot;]&#39;)  %&gt;% 
+        html_attr(&#39;href&#39;,default=&#39;&#39;)}
+    
+      hrefs = html_nodes(conv,&#39;.talk-post.message&#39;) %&gt;% 
+                                            map(hr) %&gt;% 
+                            map(paste,collapse=&#39;,&#39;) %&gt;% 
+                                       unlist()</code></pre>
+</div>
+<div id="formatting" class="section level2">
+<h2>Formatting</h2>
+<p>Regular users of Mumsnet have developed conversation etiquette that relies on formatting. They may refer to another poster by their nickname, putting that nickname in bold or italic. They may also quote from a previous post, or link, and indicate this is a quote by using bold or italic. Without this formatting, a post can be attributed to the incorrect author. It is imperative that this formatting is retained for subsequent data cleaning purpose.</p>
+<p>There are different approaches that could be taken for this. The first is just to read all text with all the html code in it:</p>
+<pre class="r"><code>posts1 = html_nodes(conv,&#39;.talk-post.message&#39;)  %&gt;% 
+                              map(as.character) %&gt;% unlist()</code></pre>
+<p>This can then be cleaned subsequently using text processing methods. This is an inelegant and risky method, but the most straightforward solution. I asked this in <a href="https://stackoverflow.com/questions/50834186/r-rvest-keeping-italics-in-text-when-scraping">StackOverflow</a> and was given an example of how to extract each set of formatting. For example if extracting just bold text:</p>
+<p>Similar to the emojis, this method is useful for gathering and analysing formatted text, but less helpful for appreciating its importance within the context of the complete post.</p>
+</div>
+<div id="what-is-still-missing" class="section level2">
+<h2>What is still missing?</h2>
+<p>In this post I’ve outlined the specific issues to Mumsnet posts that can be dealt with by some careful extraction in the data scraping process. But there are other issues to be aware of. One of the greatest difficulties is the use of pictures or memes within conversations. These often have no indication in their titles as to what they are. The simplest thing is to ignore them and be aware that something is missing in the data. Another option is to record their existence in another column, so we can potentially use this knowledge to subsequently filter our data when analysing.</p>
+<p>Another important reference point is tweets. Mumsnet users often quote tweets, but they do not embed them in their post, just copy the text of the tweet with the author. These are sometimes included in italics but are often indecipherable from the rest of the text. There is not a lot that can be done about these quoted tweets when scraping, but they can be highlighted or removed when subsequently data cleaning.</p>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>There is a reason people don’t usually write blogposts on data cleaning - like the work itself, it is difficult to present a positive, coherent narrative. However, it is a disservice to Data Science to suggest that our work is all nifty algorithms and spectacular visualisations when our day to day challenge is often converting real-world data into something that can be analysed. This requires no less skill or original thought and our challenge is to communicate the tips, tricks and workflows that got us there.</p>
+</div>
+
+
+                <br>
+            </div>
+            
+            <div class="share">
+                <a href="" class="ssk ssk-facebook"></a>
+                <a href="" class="ssk ssk-twitter"></a>
+                <a href="" class="ssk ssk-google-plus"></a>
+                <a href="" class="ssk ssk-linkedin"></a>
+            </div>
+            
+            
+                <div class="navigation">
+                    
+                    <div>
+                        <img class="icon" src="/img/back.svg" alt="back" />
+                        <a href="/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/">Mining Mumsnet Opinions with R and RVest - Part 1</a>
+                    </div>
+                    
+                    <div style="width: 100%;"></div>
+                    
+                </div>
+            
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </div>
+
 <div class="footer column">
     <div class="container">
 
