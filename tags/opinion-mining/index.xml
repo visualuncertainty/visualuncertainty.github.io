@@ -6,7 +6,7 @@
     <description>Recent content in Opinion Mining on Abigail Lebrecht</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/opinion-mining/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Mining Mumsnet Opinions - Tips for Scraping</title>
       <link>/blog/mining-mumsnet-opinions---tips-for-scraping/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/blog/mining-mumsnet-opinions---tips-for-scraping/</guid>
       <description>The R blogosphere is an incredible place right now. From R-Bloggers to R Weekly, there are dozens of posts produced daily on new methods and real world applications of R. When writing any blog my first question is what can this post add that hasn’t already been said somewhere on the internet already? Blogs are often focused on new and exciting methodologies, visualisations or applications, answering interesting questions, yet very few focus on what we Data Scientists spend most of our time doing - data wrangling and cleaning.</description>
