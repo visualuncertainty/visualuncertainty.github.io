@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Abigail Lebrecht" />
 <meta property="og:locale" content="nn_NO" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/tags/tidyverse/" />
-<meta property="og:title" content="Tidyverse" />
-<meta property="twitter:title" content="Tidyverse">
+<meta property="og:url" content="/blog/mining-mumsnet-opinions-with-r-and-rvest/" />
+<meta property="og:title" content="Mining Mumsnet Opinions with R and RVest" />
+<meta property="twitter:title" content="Mining Mumsnet Opinions with R and RVest">
 
-    <meta property="og:image" content="/img/banner.png">
+    <meta property="og:image" content="//img/twitterpic2.jpg">
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:image" content="/img/banner.png">
+    <meta property="twitter:image" content="//img/twitterpic2.jpg">
 
 <meta property="og:description" content="">
 <meta property="twitter:description" content="">
@@ -29,10 +29,10 @@
 <title>
 
 
-     Abigail Lebrecht - Tidyverse 
+     Abigail Lebrecht - Mining Mumsnet Opinions with R and RVest 
 
 </title>
-<link rel="canonical" href="/tags/tidyverse/">
+<link rel="canonical" href="/blog/mining-mumsnet-opinions-with-r-and-rvest/">
 
 
 <style media="screen">
@@ -1071,8 +1071,6 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
 
 
 
-  <link href="/tags/tidyverse/index.xml" rel="alternate" type="application/rss+xml" title="Abigail Lebrecht" />
-
 
 </head>
 
@@ -1080,7 +1078,7 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
 <body>
 
 
-<div class="header header-home column">
+<div class="header column">
 
     <div class="container">
         
@@ -1122,24 +1120,180 @@ div.main .content .markdown pre, div.main .content .markdown pre code {
     </div>
 </div>
 
-<div class="main column">
+
+<div class="main post non-narrow zero-top-spacing column">
     <div class="container">
         <div class="content">
-            <div class="posts">
-                <div class="page-heading">Posts about Tidyverse</div>
-                <ul>
-                    
-                        <li class="post-item">
-    <span class="meta">5 Jul  2018</span>
-    <a href="/blog/mining-mumsnet-opinions-with-r-and-rvest/"><span>Mining Mumsnet Opinions with R and RVest</span></a>
-</li>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
 
+    Mining Mumsnet Opinions with R and RVest
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Thu 5 Jul 2018 00:00:00 UTC">5 Jul  2018</div>
                     
-                </ul>
+                        
+                        <div class="author middot" title="Abigail Lebrecht">Abigail Lebrecht</div>
+                        
+                    
+                    <div class="reading-time middot">8 minute read</div>
+                    <div class="tags">
+                        <ul>
+                          
+                            <li class="middot"><a href="/tags/open-data">open data</a> </li>
+                          
+                            <li class="middot"><a href="/tags/r">R</a> </li>
+                          
+                            <li class="middot"><a href="/tags/opinion-mining">opinion mining</a> </li>
+                          
+                            <li class="middot"><a href="/tags/tidyverse">tidyverse</a> </li>
+                          
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                          
+                          
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <div class="markdown">
+                
+    
+    <p><a href="http://mumsnet.com">Mumsnet</a> is an incredible source of information and opinions. Providing anonymised and moderated message boards, it is an interesting segment of a large demographic of public opinion. Obviously it struggles from the inherent biases of all social media platforms, but it attracts a different crowd and a less polarising tone than unanonymised platforms such as Facebook and Twitter, helped by careful moderation from MNHQ. Data Scientists commonly mine Facebook and Twitter to measure public opinion, and APIs are available for doing this, but I think Mumsnet conversations can add to the depth of online opinion mining.</p>
+<p>There is no Mumsnet API, but conversations can be scraped using the R <a href="https://cran.r-project.org/web/packages/rvest/rvest.pdf">Rvest</a> package from the <a href="https://www.tidyverse.org/">tidyverse</a>. Before scraping, we need to consider the legal and ethical ramifications - I recommend looking at <a href="https://twitter.com/ubuntr314">Hanjo Odendaal’s</a> recent <a href="https://hanjostudy.github.io/Presentations/UseR2018/Rvest/rvest.html">tutorial from useR 2018</a>, for a full discussion of these. Start my checking the robot.txt file for what to avoid - Mumsnet’s can be found <a href="https://www.mumsnet.com/robots.txt">here</a>.</p>
+<p>I want to investigate Mumsnet’s opinions on one of the most controversial and polarising topics in the UK currently - Brexit. Fortunately Mumsnet has a special <a href="https://www.mumsnet.com/Talk/eu_referendum_2016_">Brexit talk board</a>, however not all users are aware of this and Brexit related topics are often brought up on other messageboards, primarily <a href="https://www.mumsnet.com/Talk/am_i_being_unreasonable">Am I being unreasonable</a> and <a href="https://www.mumsnet.com/Talk/politics">politics</a>. In this blogpost I am going to summarise some of the issues that arise when scraping these posts using the Rvest package.</p>
+<div id="scraping-all-the-relevant-pages" class="section level1">
+<h1>Scraping all the relevant pages</h1>
+<p>We want to collect all posts from every (or as many as possible) conversations about Brexit. We know that all conversations in the <strong>eu_referendums</strong> channel are about Brexit and some in the other channels.</p>
+<pre class="r"><code>eurefs = &#39;https://www.mumsnet.com/Talk/eu_referendum_2016_&#39;
+aiburefs = &#39;https://www.mumsnet.com/Talk/am_i_being_unreasonable&#39;
+polrefs = &#39;https://www.mumsnet.com/Talk/politics&#39;</code></pre>
+<p>First we need to scroll through all the listings in these directories. Before we can do this we need to find out how many pages of listings each directory has. We read in our first listings page and look for the node with the page number listed :</p>
+<pre class="r"><code>eur = read_html(eurefs, encoding = &quot;UTF-8&quot;) 
+
+pages = html_nodes(eur,&#39;.first&#39;)%&gt;%
+  html_text() %&gt;% unique() %&gt;%str_extract_all( &quot;\\-*\\d+\\.*\\d*&quot;) %&gt;% unlist()</code></pre>
+<p>The node titled <strong>first</strong> contains this and running <strong>html_nodes(eur,‘.first’)%&gt;% html_text() %&gt;% unique()</strong> gives pg 1 of 28. The <strong>unique</strong> function is important as often this is repeated at both the top and bottom of the page and we only need it once. We then need to pull out just the digits which we can do using regular expressions. We are then left with a vector of two numbers (masquerading as characters), the first page number and the last page number. Setting these as numerics <strong>i</strong> and <strong>n</strong> we can then generate a character vector of the URIs for all pages in that chatroom.</p>
+<pre class="r"><code>i=as.numeric(pages[1])
+n= as.numeric(pages[2])
+
+uris = paste(eurefs,&quot;?order=&amp;pg=&quot;,as.character(seq(i:n)),sep=&#39;&#39;)</code></pre>
+<p>We now need to traverse through these uris, and collect the page titles from each one. Thus for each page we need to do the following:</p>
+<pre class="r"><code> read_html(uri, encoding = &quot;UTF-8&quot;) %&gt;% html_nodes(&#39;.title&#39;)%&gt;%
+  html_nodes(xpath = &quot;./a&quot;) %&gt;% 
+  html_attr(&quot;href&quot;)</code></pre>
+<p>This reads all the nodes labelled <em>title</em> and pulls out the <em>href</em> in the link. Thus giving us a vector of uris of all conversations in the channel. This is fine for the <em>Brexit</em> channel, but in <em>AIBU</em> and <em>Politics</em>, Brexit is not the only topic. So we only want to gather the topics which relate to Brexit. For this I took a rather crude approach of looking for pages with <em>Brexit</em> or <em>EU</em> in the title:</p>
+<pre class="r"><code>  read_html(uri, encoding = &quot;UTF-8&quot;) %&gt;% html_nodes(&#39;.title&#39;)%&gt;%
+    html_nodes(xpath = &quot;//tr[.//a[contains(@href, &#39;Brexit&#39;) 
+               or contains(@href, &#39;brexit&#39;) or contains(@href, &#39;BREXIT&#39;) 
+               or contains(@href, &#39;-EU-&#39;)]]//a&quot;) %&gt;% 
+    html_attr(&quot;href&quot;)</code></pre>
+<p>We can do this using <strong>xpath</strong> to filter the XML nodes before extracting the <strong>href</strong> links. I look for documents with a title containing <strong>Brexit</strong> (with various capitalisation options), or <strong>EU</strong>. This is a slightly crude approach and will include some irrelevant conversations (eg Mumsnet favourite “will Brexit impact house prices?”), and miss many more conversations that may reference the Brexit situation without referring to it.</p>
+<p>Identifying a Brexit themed post could probably be done more accurately using machine learning. We could use the conversation titles from the Brexit talk board to build a model that predicts if a conversation title is likely to be about Brexit (eg Naive Bayes). However, given the small number of conversations in the other channels that this would apply to, it doesn’t seem worth the effort.</p>
+<p>It is worth considering the advice of Hanjo Odendaal in his tutorial to not overload the site you are scraping from by adding a sleep function between page calls. He suggests using the following function between each read_html call to decrease your impact:</p>
+<pre class="r"><code>nytnyt &lt;- function (periods = c(1,1.5)){
+  tictoc &lt;- runif(1, periods[1], periods[2])
+  cat(paste0(Sys.time()), &quot;- Sleeping for &quot;, round(tictoc, 2), &quot;seconds\n&quot;)
+  Sys.sleep(tictoc)
+}</code></pre>
+</div>
+<div id="reading-a-mumsnet-conversation" class="section level1">
+<h1>Reading a Mumsnet Conversation</h1>
+<p>A Mumsnet conversation consists of a number of posts split over many pages. The conversation is started by one user and their initial post is at the top of every page. Each post has a username, date-time stamp and the content of the post. Thus on first appearance, scraping posts is relatively straightforward using Rvest:</p>
+<pre class="r"><code>    conv = read_html(uri, encoding = &quot;UTF-8&quot;)
+    users1=html_nodes(conv,&#39;.nickname&#39;)%&gt;%
+      html_text() 
+    time1=html_nodes(conv,&#39;.post_time&#39;)%&gt;%
+      html_text() 
+    posts1 = html_nodes(conv,&#39;.talk-post.message&#39;)%&gt;%
+      html_text() 
+    
+    df = data.frame(date = time1,user = users1,text=posts1,stringsAsFactors=FALSE)</code></pre>
+<p>For each page of the conversation, we can read every nickname, post time and message and then combine them in a data frame. However, while this works fine for the nickname and post time, html_text() ignores all html coding in the text, which means that while we think we are scraping everything, we miss out on important information.</p>
+<div id="emojis" class="section level2">
+<h2>emojis</h2>
+<p>Emojis are an important means of communication on internet chatboards. The html_text() function does not scrape them, so another method needs to be used. There are different approaches that can be taken. For some, it may be considered useful to just know an emoji exists in a post at all, and therefore emojis can be scraped into a separate vector. To do this we look for <strong>img</strong> tags with an <strong>alt</strong> attribute - only emojis have these.</p>
+<pre class="r"><code>    emo&lt;-function(bl){
+      html_nodes(bl,&#39;img&#39;)  %&gt;% 
+        html_attr(&#39;alt&#39;,default=&#39;&#39;)}
+    
+    emojis = html_nodes(conv,&#39;.talk-post.message&#39;) %&gt;% 
+                                        map(emo) %&gt;% 
+                                        map(paste,collapse=&#39; &#39;) %&gt;% 
+                                        unlist()</code></pre>
+<p>We can then use the map function from the purrr package to create a list of the emojis in every single post. This can then be converted back to a vector and added to a data frame with the nickname, time and text.</p>
+<p>However, in some case this might not be sufficient. Emojis are often used as part of speech. It will enhance our textual analytics to keep them in their position in the text.</p>
+</div>
+<div id="links" class="section level2">
+<h2>Links</h2>
+<p>Mumsnet users often share links to websites with eachother. These are useful to record, particularly when studying political discussion, to understand what outside links are of interest and being shared. In this case, there is no need for it to be included inside the text, so we can use a similar method for getting the emojis, this time looking for links and pulling out the <strong>href</strong> attribute:</p>
+<pre class="r"><code>    hr&lt;-function(bl){
+      html_nodes(bl,&#39;a[target=\&quot;_blank\&quot;]&#39;)  %&gt;% 
+        html_attr(&#39;href&#39;,default=&#39;&#39;)}
+    
+      hrefs = html_nodes(conv,&#39;.talk-post.message&#39;) %&gt;% 
+                                            map(hr) %&gt;% 
+                            map(paste,collapse=&#39;,&#39;) %&gt;% 
+                                       unlist()</code></pre>
+</div>
+<div id="formatting" class="section level2">
+<h2>Formatting</h2>
+<p>Regular users of Mumsnet have developed conversation etiquette that relies on formatting. They may refer to another poster by their nickname, putting that nickname in bold or italic. They may also quote from a previous post, or link, and indicate this is a quote by using bold or italic. Without this formatting, a post can be attributed to the incorrect author. It is imperative that this formatting is retained for subsequent data cleaning purpose.</p>
+<p>There are different approaches that could be taken for this. The first is just to read all text with all the html code in it:</p>
+<pre class="r"><code>posts1 = html_nodes(conv,&#39;.talk-post.message&#39;)  %&gt;% 
+                              map(as.character) %&gt;% unlist()</code></pre>
+<p>This can then be cleaned subsequently using text processing methods. This is an inelegant and risky method, but the most straightforward solution. I asked this in <a href="https://stackoverflow.com/questions/50834186/r-rvest-keeping-italics-in-text-when-scraping">StackOverflow</a> and was given an example of how to extract each set of formatting. For example if extracting just bold text:</p>
+<p>Similar to the emojis, this method is useful for gathering and analysing formatted text, but less helpful for appreciating its importance within the context of the complete post.</p>
+</div>
+<div id="what-is-still-missing" class="section level2">
+<h2>What is still missing?</h2>
+<p>In this post I’ve outlined the specific issues to Mumsnet posts that can be dealt with by some careful extraction in the data scraping process. But there are other issues to be aware of. One of the greatest difficulties is the use of pictures or memes within conversations. These often have no indication in their titles as to what they are. The simplest thing is to ignore them and be aware that something is missing in the data. Another option is to record their existence in another column, so we can potentially use this knowledge to subsequently filter our data when analysing.</p>
+<p>Another important reference point is tweets. Mumsnet users often quote tweets, but they do not embed them in their post, just copy the text of the tweet with the author. These are sometimes included in italics but are often indecipherable from the rest of the text. There is not a lot that can be done about these quoted tweets when scraping, but they can be highlighted or removed when subsequently data cleaning.</p>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>There is a reason people don’t usually write blogposts on data cleaning - like the work itself, it is difficult to present a positive, coherent narrative. However, it is a disservice to Data Science to suggest that our work is all nifty algorithms and spectacular visualisations when our day to day challenge is often converting real-world data into something that can be analysed. This requires no less skill or original thought and our challenge is to communicate the tips, tricks and workflows that got us there.</p>
+</div>
+
+
+                <br>
+            </div>
+            
+            <div class="share">
+                <a href="" class="ssk ssk-facebook"></a>
+                <a href="" class="ssk ssk-twitter"></a>
+                <a href="" class="ssk ssk-google-plus"></a>
+                <a href="" class="ssk ssk-linkedin"></a>
+            </div>
+            
+            
+                <div class="navigation">
+                    
+                    <div>
+                        <img class="icon" src="/img/back.svg" alt="back" />
+                        <a href="/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/">A Moneysupermarket of Higher Education? Why we shouldn&#39;t be totally Data-Driven</a>
+                    </div>
+                    
+                    <div style="width: 100%;"></div>
+                    
+                </div>
+            
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </div>
+
 <div class="footer column">
     <div class="container">
 

@@ -52,9 +52,7 @@ Emojis are an important means of communication on internet chatboards. The html_
 We can then use the map function from the purrr package to create a list of the emojis in every single post. This can then be converted back to a vector and added to a data frame with the nickname, time and text.
 
 However, in some case this might not be sufficient. Emojis are often used as part of speech.
-
-![Mumsnet emoji](emojis.png)
-
+:smile:
 It will enhance our textual analytics to keep them in their position in the text. 
 
 ##Links

@@ -3,12 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/mining-mumsnet-opinions---tips-for-scraping/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/mining-mumsnet-opinions-with-r-and-rvest---part-1/</loc>
+    <loc>/blog/mining-mumsnet-opinions-with-r-and-rvest/</loc>
     <lastmod>2018-07-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,13 +38,13 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,19 +79,19 @@
   
   <url>
     <loc>/tags/open-data/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/opinion-mining/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -108,7 +103,7 @@
   
   <url>
     <loc>/tags/tidyverse/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
