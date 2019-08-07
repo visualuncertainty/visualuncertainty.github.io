@@ -1,110 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Abigail Lebrecht</title>
-    <link>/</link>
-    <description>Recent content on Abigail Lebrecht</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Mining Mumsnet Opinions with R and RVest</title>
-      <link>/blog/mining-mumsnet-opinions-with-r-and-rvest/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/mining-mumsnet-opinions-with-r-and-rvest/</guid>
-      <description>Mumsnet is an incredible source of information and opinions. Providing anonymised and moderated message boards, it is an interesting segment of a large demographic of public opinion. Obviously it struggles from the inherent biases of all social media platforms, but it attracts a different crowd and a less polarising tone than unanonymised platforms such as Facebook and Twitter, helped by careful moderation from MNHQ. Data Scientists commonly mine Facebook and Twitter to measure public opinion, and APIs are available for doing this, but I think Mumsnet conversations can add to the depth of online opinion mining.</description>
-    </item>
-    
-    <item>
-      <title>A Moneysupermarket of Higher Education? Why we shouldn&#39;t be totally Data-Driven</title>
-      <link>/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/</guid>
-      <description>Today the UK Higher Education Minister, Sam Gyimah tweeted:
-We want students to be better informed about degree choices &amp;amp; the returns - today, we&#39;re officially launching a competition for tech companies to take graduate data &amp;amp; create a MoneySuperMarket for students, giving them real power to make the right choice. https://t.co/pAJV7Iz7Oe— Sam Gyimah MP (@SamGyimah) June 26, 2018Many people disagree with this for educational reasons and I’m sure I probably do too, but that isn’t why this tweet made me shout at my computer screen.</description>
-    </item>
-    
-    <item>
-      <title>The local elections in Barnet: What really happened?</title>
-      <link>/blog/the-local-elections-in-barnet-what-really-happened/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/the-local-elections-in-barnet-what-really-happened/</guid>
-      <description>The Barnet council result has been the most startling in the recent local elections. Consistently predicted in pre-election polls as a Labour gain, Labour’s top target delivered an increased majority for the Conservatives. Many local people from all parties who were on the campaign trail have been quick to connect the Barnet result with Labour’s anti-semitism problems including Labour councillors and Barnet’s Labour leader. A blog by Dr Daniel Allington provides evidence for the link by showing a positive correlation between the increase in Conservative vote share in 2018 and the proportion of a ward that is Jewish and a similar decrease in the Labour vote, inferring that anti-semitism in Labour is likely to have driven the result in these key wards.</description>
-    </item>
-    
-    <item>
-      <title>Why &#39;What is a Data Scientist?&#39; is the wrong question to ask</title>
-      <link>/blog/why-what-is-a-data-scientist-is-the-wrong-question-to-ask/</link>
-      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/why-what-is-a-data-scientist-is-the-wrong-question-to-ask/</guid>
-      <description>In a recent interview on Dataframed podcast, Julia Silge, spoke of her background in Observational Astronomy and how applicable it was in Data Science. Later she gave a good explanation of her work in textual analytics and how it differs from Natural Language Processing, again as a method for observation rather than prediction. I found her use of wording interesting and thought it should have some credence in every data scientists’ favourite debate “What is a Data Scientist?</description>
-    </item>
-    
-    <item>
-      <title>UK Election Data: Where to find open data and interesting metrics</title>
-      <link>/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/</link>
-      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/uk-election-data-where-to-find-open-data-and-interesting-metrics/</guid>
-      <description>Most electoral analysis is conducted by academics with University resources and collaborators. Not working in an academic institution and having spent some time researching what actually happened in the 2017 election, I have gathered some useful open data source and insights for election data that I thought would be helpful to share. In the following series of blog posts, I will describe where to find the data and why each bit of data is useful.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>I have been working in Data Science since completing my PhD in Computer Science (Imperial College London, 2010).
-Details of my professional experience can be found on LinkedIn.
-I have experience applying Data Science and Analytics in areas including e-commerce, digital marketing and political research. My Data Science interests include the multi-touch marketing channel attribution problem, effective data communication and visualisation, survey design and interpretation, exploratory data analysis, textual analytics and working with R.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/home/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/home/</guid>
-      <description>code{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/contact/</guid>
-      <description>Contact me on Twitter, LinkedIn or email abigail dot lebrecht at gmail dot com</description>
-    </item>
-    
-    <item>
-      <title>Home</title>
-      <link>/home/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/home/</guid>
-      <description>Data Science Consultant interested in the effective communication of data, understanding uncertainty, visualisation and coding in R. Available for consultancy in London, UK or remote work.</description>
-    </item>
-    
-    <item>
-      <title>License</title>
-      <link>/license/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/license/</guid>
-      <description>The MIT License (MIT)
-Copyright &amp;copy; 2018 Abigail Lebrechtabigail.lebrecht@gmail.com
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;ldquo;Software&amp;rdquo;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</description>
-    </item>
-    
-  </channel>
-</rss>
