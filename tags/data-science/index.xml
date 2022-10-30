@@ -1,34 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Data Science on Abigail Lebrecht</title>
-    <link>/tags/data-science/</link>
-    <description>Recent content in Data Science on Abigail Lebrecht</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>A Moneysupermarket of Higher Education? Why we shouldn&#39;t be totally Data-Driven</title>
-      <link>/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/a-moneysupermarket-of-higher-education-why-we-shouldnt-be-totally-data-driven/</guid>
-      <description>Today the UK Higher Education Minister, Sam Gyimah tweeted:
-We want students to be better informed about degree choices &amp;amp; the returns - today, we&#39;re officially launching a competition for tech companies to take graduate data &amp;amp; create a MoneySuperMarket for students, giving them real power to make the right choice. https://t.co/pAJV7Iz7Oe— Sam Gyimah MP (@SamGyimah) June 26, 2018Many people disagree with this for educational reasons and I’m sure I probably do too, but that isn’t why this tweet made me shout at my computer screen.</description>
-    </item>
-    
-    <item>
-      <title>Why &#39;What is a Data Scientist?&#39; is the wrong question to ask</title>
-      <link>/blog/why-what-is-a-data-scientist-is-the-wrong-question-to-ask/</link>
-      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/why-what-is-a-data-scientist-is-the-wrong-question-to-ask/</guid>
-      <description>In a recent interview on Dataframed podcast, Julia Silge, spoke of her background in Observational Astronomy and how applicable it was in Data Science. Later she gave a good explanation of her work in textual analytics and how it differs from Natural Language Processing, again as a method for observation rather than prediction. I found her use of wording interesting and thought it should have some credence in every data scientists’ favourite debate “What is a Data Scientist?</description>
-    </item>
-    
-  </channel>
-</rss>
